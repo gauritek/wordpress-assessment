@@ -1,0 +1,95 @@
+/*
+ Theme Name: Twenty Twenty-Four Child
+ Template: twentytwentyfour
+ Version: 1.0
+*/
+
+@import url("../twentytwentyfour/style.css");
+
+/* Header layout desktop */
+@media (min-width: 768px) {
+  #site-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .site-branding {
+    order: 1;
+  }
+  .main-navigation {
+    order: 2;
+  }
+}
+
+@media (max-width: 767px) {
+  body {
+    font-size: 14px;
+  }
+}
+
+
+footer,
+.site-footer {
+    background-color: var(--wp--preset--color--contrast); /* change to your desired color */
+    color: #ffffff; /* optional: change footer text color */
+}
+
+.main-navigation {
+  position: relative;
+}
+
+.main-navigation ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.main-navigation li {
+  position: relative;
+}
+
+.main-navigation > ul > li {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+.main-navigation li a {
+  text-decoration: none;
+  padding: 10px;
+  display: block;
+}
+
+.main-navigation li ul {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 100%;
+  background: #fff;
+  min-width: 200px;
+  z-index: 100;
+}
+
+.main-navigation li:hover > ul,
+.main-navigation li:focus-within > ul {
+  display: block;
+}
+
+.main-navigation li ul li {
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .main-navigation > ul {
+    display: none;
+    flex-direction: column;
+  }
+
+  .main-navigation.active > ul {
+    display: flex;
+  }
+
+  .main-navigation > ul > li {
+    display: block;
+    margin-right: 0;
+  }
+}
